@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //법률 검색 액티비티로 넘어가는 버튼
         law = (Button) findViewById(R.id.lawButton);
         law.setOnClickListener(
                 new View.OnClickListener() {
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+        //판례 검색 액티비티로 넘어가는 버튼
         pre = (Button) findViewById(R.id.preButton);
         pre.setOnClickListener(
                 new View.OnClickListener() {

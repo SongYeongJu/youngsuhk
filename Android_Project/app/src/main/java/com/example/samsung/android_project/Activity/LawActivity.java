@@ -25,6 +25,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class LawActivity extends AppCompatActivity {
+    // Precedence Activity랑 같은 구조
     private ArrayList<Law> lList;
 
     private TextView contentTextView;

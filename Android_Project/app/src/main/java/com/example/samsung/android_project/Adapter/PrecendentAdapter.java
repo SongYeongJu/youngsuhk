@@ -23,6 +23,7 @@ public class PrecendentAdapter extends BaseAdapter {
     private ArrayList<Precedent> list;
     private static LayoutInflater inflater = null;
 
+    // 판례 리스트를 구현해주는 어뎁터
     public PrecendentAdapter(ArrayList<Precedent> temp) {
         list = temp;
     }
@@ -50,7 +51,7 @@ public class PrecendentAdapter extends BaseAdapter {
     }
 
 
-    public class Holder {
+    private class Holder {
         TextView num;
         TextView name;
         TextView court;
@@ -62,8 +63,9 @@ public class PrecendentAdapter extends BaseAdapter {
     @SuppressLint("ResourceAsColor")
     @Override
     public View getView(int pos, View rowView, ViewGroup parent) {
-        final int position = pos;
-        final Holder holder = new Holder();
+        // 리스트뷰의 각 아이템을 구현하는 함수
+        final int position = pos; // 리스트뷰의 위치를 표시
+        final Holder holder = new Holder(); // holder안에 구성해야할 객체들이 들어있음
         final Context context = parent.getContext();
 
         // "listview_item" Layout을 inflate하여 convertView 참조 획득.

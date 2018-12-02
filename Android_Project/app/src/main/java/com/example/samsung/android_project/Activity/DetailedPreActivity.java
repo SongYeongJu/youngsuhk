@@ -26,6 +26,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class DetailedPreActivity extends AppCompatActivity {
+    // 판례 상세정보 표시 액티비티
     private Precedent precedent;
     private WebView webView;
 
@@ -34,14 +35,17 @@ public class DetailedPreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_pre);
         try{
+            //앞의 액티비티에서 넘겨준 판례 객체 가져옴
             Intent intent=getIntent();
             precedent=(Precedent)intent.getExtras().get("info");
             Log.d("song","success to load precedent");
+
+            // 웹뷰 init
             webView=(WebView)findViewById(R.id.webView);
             WebSettings webSettings=webView.getSettings();
 
             webView.getSettings().setJavaScriptEnabled(true);
-            // 구글홈페이지 지정
+            // 웹뷰 url에 판례 상세정보 불러오는 url 지정 -> 반환 형식 html이라 웹뷰 사용함
             webView.loadUrl(
                     "http://www.law.go.kr/DRF/lawService.do?OC=djfls0304&target=prec&type=HTML&mobileYn=Y&ID="
                     + precedent.getPContent(0)

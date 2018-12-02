@@ -20,9 +20,11 @@ public class LawAdapter extends BaseAdapter {
     private ArrayList<Law> list;
     private static LayoutInflater inflater = null;
 
+    // 판례 리스트를 구성해주는 어뎁터
     public LawAdapter(ArrayList<Law> temp) {
         list = temp;
     }
+
 
     @Override
     public int getCount() {
@@ -47,7 +49,7 @@ public class LawAdapter extends BaseAdapter {
     }
 
 
-    public class Holder {
+    private class Holder {
         TextView num;
         TextView name;
         TextView court;
@@ -56,11 +58,13 @@ public class LawAdapter extends BaseAdapter {
         TextView date;
     }
 
+
     @SuppressLint("ResourceAsColor")
     @Override
     public View getView(int pos, View rowView, ViewGroup parent) {
-        final int position = pos;
-        final LawAdapter.Holder holder = new LawAdapter.Holder();
+    // 리스트뷰의 각 아이템을 구현하는 함수
+        final int position = pos; // 리스트뷰의 위치를 표시
+        final LawAdapter.Holder holder = new LawAdapter.Holder(); // holder안에 구성해야할 객체들이 들어있음
         final Context context = parent.getContext();
 
         // "listview_item" Layout을 inflate하여 convertView 참조 획득.
@@ -80,10 +84,7 @@ public class LawAdapter extends BaseAdapter {
         try {
             Law law = (Law) getItem(position);
             holder.num.setText("" + position);
-//                holder.name.setText(precedent.getPContent(1));
-            //287 10 11
-            holder.name.setText(Html.fromHtml(law.getContent(2)));
-
+            holder.name.setText(Html.fromHtml(law.getContent(2))); //name이 html형식으로 지정되어 있음
             holder.court.setText(law.getContent(8));
             holder.type1.setText(law.getContent(7));
             holder.type2.setText(law.getContent(10));

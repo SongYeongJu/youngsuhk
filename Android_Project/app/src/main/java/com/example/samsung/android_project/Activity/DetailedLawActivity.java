@@ -14,7 +14,7 @@ import com.example.samsung.android_project.DataStruct.Precedent;
 import com.example.samsung.android_project.R;
 
 public class DetailedLawActivity extends AppCompatActivity {
-
+    // DetailedPreActivity 랑 같은 구조
     private Law law;
     private WebView webView;
 
